@@ -20,5 +20,5 @@
 5. **Async/Await**: Simplified asynchronous calls for fetching pet data and categories, providing smooth transitions between actions.
 
 ## Live Link
-### https://assignment-06-peddy-website.netlify.app
+### https://pet-heaven-website.netlify.app/
 
