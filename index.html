@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pet Haven</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      .font {
+        font-family: "Lato", sans-serif;
+      }
+      .active {
+        box-sizing: border-box;
+        border: 1.5px solid rgb(14, 122, 129);
+        background: rgba(14, 122, 129, 0.1);
+
+      }
+      .adopted-btn {
+        background-color: #e7e6e6;
+      }
+      #spinner {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body class="font">
+    <!--navbar starts-->
+    <div class="navbar bg-base-100 max-w-screen-xl mx-auto">
+      <div class="navbar-start">
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
+          </div>
+          <ul
+            tabindex="0"
+            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+          >
+            <li><a href="#home">Home</a></li>
+            <li><a href="#adoption">Shop</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="flex gap-3 items-center">
+          <img src="images/logo.webp" alt="" />
+          <h1 class="text-3xl font-black text-[#131313]">Peddy</h1>
+        </div>
+      </div>
+      <div class="navbar-center hidden lg:flex">
+        <ul class="menu menu-horizontal px-1">
+          <li class="text-base text-[#131313]"><a href="#home">Home</a></li>
+          <li class="text-base text-[#131313]"><a href="#adoption">Shop</a></li>
+          <li class="text-base text-[#131313]">
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navbar-end">
+        <button class="btn btn-ghost btn-circle border border-[#0E7A8133]">
+          <i class="fa-regular fa-user"></i>
+        </button>
+      </div>
+    </div>
+    <!--navbar ends-->
+
+    <main>
+      <!--home section starts here-->
+      <section class="max-w-screen-xl mx-auto" id="home">
+        <div class="mt-6">
+          <div class="hero-content text-center">
+            <div class="max-w-3xl">
+              <p class="text-[#13131399] md:text-2xl font-bold mb-4">
+                Bringing Families Together ❤️‍🔥
+              </p>
+              <h2 class="text-3xl md:text-7xl font-black text-[#131313] py-6">
+                Your Path to Adoption Starts Here
+              </h2>
+              <p class="font-normal text-[#131313] text-base">
+                It is a long established fact that a reader will be distracted
+                by the readable content of a page when looking at its layout.
+                The point of using Lorem Ipsum is that it has a.
+              </p>
+              <button
+                onclick="window.location.href='#adoption'"
+                class="btn btn-lg bg-[#0E7A81] text-[#FFFFFF] text-xl font-bold mt-8"
+              >
+                View More
+              </button>
+            </div>
+          </div>
+        </div>
+        <img class="mx-auto mt-5" src="images/pet.webp" alt="" />
+      </section>
+      <!--home section ends here-->
+
+      <!--adoption section starts here-->
+      <section id="adoption" class="max-w-screen-xl mx-auto mt-12 p-5 lg:p-0">
+        <div class="max-w-screen-sm mx-auto text-center space-y-4 mb-12">
+          <h1 class="text-[#131313] font-black text-4xl">
+            Adopt Your Best Friend
+          </h1>
+          <p class="text-[#131313B3] font-normal text-base">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of using Lorem Ipsum is that it has a.
+          </p>
+        </div>
+        <!--fetch catagory button starts-->
+        <div
+          id="categories"
+          class="btns text-center gap-5 grid grid-cols-2 lg:flex lg:flex-row justify-center p-5 lg:p-0"
+        ></div>
+        <!--fetch catagory button ends-->
+
+        <div class="mt-8">
+          <div class="flex justify-between">
+            <h1 class="text-2xl font-black text-[#131313]">
+              Best Deal For You
+            </h1>
+            <button
+              id="sort-btn"
+              class="btn bg-[#0E7A81] text-[#FFFFFF] font-bold text-xl"
+            >
+              Sort by price
+            </button>
+          </div>
+
+          <!--spinner starts here-->
+          <div
+            id="spinner"
+            class="max-w-screen-sm mx-auto text-center mt-5 mb-5 min-h-screen"
+          >
+            <span class="loading loading-bars loading-lg"></span>
+          </div>
+          <!--spinner ends here-->
+
+          <div id="pets-container" class="px-2 py-10 grid grid-cols-9 gap-5">
+            <!--fetch catagory cards starts-->
+            <div
+              id="pets"
+              class="col-span-7 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+            ></div>
+            <!--fetch catagory cards ends-->
+
+            <div
+              class="rounded-xl p-1 md:p-5 border border-[#1313131A] col-span-2"
+            >
+              <div
+                id="like"
+                class="grid grid-cols-1 lg:grid-cols-2 gap-2 justify-items-center items-center"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--adoption section ends here-->
+
+      <!--modal starts here-->
+      <section class="modal">
+        <button
+          id="showModalData"
+          class="btn hidden"
+          onclick="myModal.showModal()"
+        ></button>
+        <dialog id="myModal" class="modal modal-middle">
+          <div class="modal-box">
+            <div id="modal-content" class="space-y-1"></div>
+            <div class="w-full mt-2">
+              <form method="dialog">
+                <button
+                  class="border-1 border-[#0E7A8133] rounded-lg w-full bg-[#0E7A811A] text-center text-[#0E7A81] py-3 font-bold"
+                >
+                  Cancel
+                </button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+      </section>
+
+      <section class="modal-2">
+        <dialog id="myModal2" class="modal modal-middle">
+          <div class="rounded-lg p-2 bg-white text-center space-y-3">
+            <i class="fa-regular fa-handshake text-6xl text-yellow-700"></i>
+            <h3 class="text-4xl font-bold">Congrates</h3>
+            <p class="text-lg font-medium">
+              Adoption Process is Start For Your Pet
+            </p>
+            <p id="modal-countdown" class="font-extrabold text-5xl">3</p>
+          </div>
+        </dialog>
+      </section>
+      <!--modal ends here-->
+    </main>
+
+    <!--footer starts here-->
+    <footer class="bg-[#131313]" id="contact">
+      <div
+        class="footer max-w-screen-xl mx-auto py-10 md:py-24 p-5 grid grid-cols-1 lg:flex lg:justify-between"
+      >
+        <div>
+          <div class="flex gap-3 items-center">
+            <img src="images/logo.webp" alt="" />
+            <h1 class="text-3xl font-black text-[#FFFFFF]">Peddy</h1>
+          </div>
+          <div class="mt-4 text-[#FFFFFFE6] text-base space-y-2">
+            <p>
+              Location: av. Washington 165,Ny CA <br />
+              54003
+            </p>
+            <p>Phone: +31859644725</p>
+            <p>Email: info@yourdomain.com</p>
+            <p>Openings hours: 9.00 AM - 5.00 PM</p>
+          </div>
+          <div class="flex gap-3 items-center">
+            <i class="fa-brands fa-facebook text-3xl text-[#FFFFFF]"></i>
+            <i class="fa-brands fa-youtube text-3xl text-[#FFFFFF]"></i>
+            <i class="fa-brands fa-x-twitter text-3xl text-[#FFFFFF]"></i>
+            <i class="fa-brands fa-instagram text-3xl text-[#FFFFFF]"></i>
+          </div>
+        </div>
+        <div>
+          <h6 class="text-lg font-bold text-[#FFFFFFE6] mb-8">Useful Links</h6>
+          <a class="link link-hover text-[#FFFFFF99] text-base">Home</a>
+          <a class="link link-hover text-[#FFFFFF99] text-base">About Us</a>
+          <a class="link link-hover text-[#FFFFFF99] text-base">Animals</a>
+          <a class="link link-hover text-[#FFFFFF99] text-base">Foundation</a>
+          <a class="link link-hover text-[#FFFFFF99] text-base">Contact</a>
+        </div>
+        <div>
+          <h6 class="text-lg font-bold text-[#FFFFFFE6] mb-8">
+            Drop a Message
+          </h6>
+          <fieldset class="form-control">
+            <input
+              type="text"
+              placeholder="Enter your email"
+              class="input bg-[#FFFFFF0D]"
+            />
+
+            <button
+              class="btn bg-[#0E7A81] mt-6 border-none text-xl font-bold text-[#FFFFFF]"
+            >
+              Subscribe
+            </button>
+          </fieldset>
+        </div>
+      </div>
+    </footer>
+    <!--footer ends here-->
+
+    <!--scripts-->
+    <script src="js/load.js"></script>
+  </body>
+</html>
